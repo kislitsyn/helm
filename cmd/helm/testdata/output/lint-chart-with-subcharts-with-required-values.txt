@@ -1,0 +1,11 @@
+==> Linting testdata/testcharts/chart-with-subcharts-with-required-config
+[INFO] Chart.yaml: icon is recommended
+[WARNING] templates/: directory not found
+
+==> Linting testdata/testcharts/chart-with-subcharts-with-required-config/charts/subchart-one
+[INFO] Chart.yaml: icon is recommended
+
+==> Linting testdata/testcharts/chart-with-subcharts-with-required-config/charts/subchart-two
+[INFO] Chart.yaml: icon is recommended
+
+3 chart(s) linted, 0 chart(s) failed

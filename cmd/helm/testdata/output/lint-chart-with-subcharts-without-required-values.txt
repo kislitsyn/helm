@@ -1,0 +1,13 @@
+==> Linting testdata/testcharts/chart-with-subcharts-with-required-config
+[INFO] Chart.yaml: icon is recommended
+[WARNING] templates/: directory not found
+
+==> Linting testdata/testcharts/chart-with-subcharts-with-required-config/charts/subchart-one
+[INFO] Chart.yaml: icon is recommended
+[ERROR] templates/: template: subchart-one/templates/configmap.yaml:7:23: executing "subchart-one/templates/configmap.yaml" at <.Values.foo.testValue1>: nil pointer evaluating interface {}.testValue1
+
+==> Linting testdata/testcharts/chart-with-subcharts-with-required-config/charts/subchart-two
+[INFO] Chart.yaml: icon is recommended
+[ERROR] templates/: template: subchart-two/templates/configmap.yaml:7:23: executing "subchart-two/templates/configmap.yaml" at <.Values.foo.testValue2>: nil pointer evaluating interface {}.testValue2
+
+Error: 3 chart(s) linted, 2 chart(s) failed

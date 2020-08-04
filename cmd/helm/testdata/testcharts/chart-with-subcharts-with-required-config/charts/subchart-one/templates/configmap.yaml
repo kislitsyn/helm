@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-subchart-one
+  namespace: {{ .Release.Namespace }}
+data:
+  testValue: {{ .Values.foo.testValue1 }}

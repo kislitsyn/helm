@@ -1,0 +1,4 @@
+apiVersion: v2
+description: Subchart two
+name: subchart-two
+version: 0.0.1

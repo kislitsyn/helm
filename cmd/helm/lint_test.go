@@ -36,3 +36,19 @@ func TestLintCmdWithSubchartsFlag(t *testing.T) {
 	}}
 	runTestCmd(t, tests)
 }
+
+func TestLintCmdWithSubchartsWithRequiredValues(t *testing.T) {
+	testChart := "testdata/testcharts/chart-with-subcharts-with-required-config"
+	tests := []cmdTestCase{{
+		name:      "lint chart with subcharts with required values",
+		cmd:       fmt.Sprintf("lint %s --with-subcharts --set-string subchart-one.foo.testValue1=test-one,subchart-two.foo.testValue2=test-two", testChart),
+		golden:    "output/lint-chart-with-subcharts-with-required-values.txt",
+		wantError: false,
+	}, {
+		name:      "lint chart with subcharts without required values",
+		cmd:       fmt.Sprintf("lint %s --with-subcharts --set-string foo.testValue1=test-value-1,foo.testValue2=test-value-2", testChart),
+		golden:    "output/lint-chart-with-subcharts-without-required-values.txt",
+		wantError: true,
+	}}
+	runTestCmd(t, tests)
+}
